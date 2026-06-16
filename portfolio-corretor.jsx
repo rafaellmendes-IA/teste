@@ -439,19 +439,21 @@ export default function Page() {
                 <div style={{ fontFamily:C.sans, color:"rgba(255,255,255,0.5)", fontSize:13 }}>Entrarei em contato em breve.</div>
               </div>
             ) : (
-              <div style={{ display:"flex", flexDirection:"column", gap:10 }}>
-                <input type="text" placeholder="Nome completo" value={form.name}
-                  onChange={e => setForm({...form, name:e.target.value})} style={fieldStyle} />
-                <input type="tel" placeholder="WhatsApp" value={form.phone}
-                  onChange={e => setForm({...form, phone:e.target.value})} style={fieldStyle} />
-                <textarea placeholder="O que você está procurando?" rows={5} value={form.message}
-                  onChange={e => setForm({...form, message:e.target.value})}
-                  style={{ ...fieldStyle, resize:"vertical" }} />
-                <button onClick={handleSubmit} style={{
-                  background:C.gold, color:C.ink, fontFamily:C.sans, fontWeight:700,
-                  fontSize:12, letterSpacing:"0.1em", textTransform:"uppercase",
-                  padding:15, border:"none", cursor:"pointer", marginTop:4,
-                }}>Enviar Mensagem</button>
+              <div style={{ display: "none" }}>
+                <div style={{ display:"flex", flexDirection:"column", gap:10 }}>
+                  <input type="text" placeholder="Nome completo" value={form.name}
+                    onChange={e => setForm({...form, name:e.target.value})} style={fieldStyle} />
+                  <input type="tel" placeholder="WhatsApp" value={form.phone}
+                    onChange={e => setForm({...form, phone:e.target.value})} style={fieldStyle} />
+                  <textarea placeholder="O que você está procurando?" rows={5} value={form.message}
+                    onChange={e => setForm({...form, message:e.target.value})}
+                    style={{ ...fieldStyle, resize:"vertical" }} />
+                  <button onClick={handleSubmit} style={{
+                    background:C.gold, color:C.ink, fontFamily:C.sans, fontWeight:700,
+                    fontSize:12, letterSpacing:"0.1em", textTransform:"uppercase",
+                    padding:15, border:"none", cursor:"pointer", marginTop:4,
+                  }}>Enviar Mensagem</button>
+                </div>
               </div>
             )}
           </div>
